@@ -41,11 +41,11 @@ export function NewLog() {
 	const submitLog = async () => {
 		try {
 			validateLog();
-			// const { error } = await supabase
-			// 	.from("logs")
-			// 	.upsert({ ...log, date: dayjs(log.date).format("YYYY-MM-DD") })
-			// 	.select("*")
-			// 	.single();
+			const { error } = await supabase
+				.from("logs")
+				.upsert({ ...log, date: dayjs(log.date).format("YYYY-MM-DD") })
+				.select("*")
+				.single();
 			if (!error) {
 				setLogs(log, dayjs(log.date).format("YYYY-MM-DD"));
 				toast({

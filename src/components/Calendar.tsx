@@ -7,10 +7,10 @@ import {
 	HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { cn } from "@/lib/utils";
-// import { useLogStore } from "@/store";
+import { useLogStore } from "@/store";
 
 export default function Calendar() {
-	// const logs = useLogStore((state) => state.logs);
+	const logs = useLogStore((state) => state.logs);
 
 	function getDateInMonth(year = dayjs().year(), month = dayjs().month()) {
 		const startDate = dayjs().year(year).month(month).date(1);
@@ -40,7 +40,7 @@ export default function Calendar() {
 	return (
 		<div className=" border border-dashed flex flex-wrap gap-2 p-10 justify-center rounded-md">
 			{getDateInMonth().map((value, index) => {
-				// const log = logs[value];
+				const log = logs[value];
 
 				return (
 					<HoverCard key={index}>
@@ -48,12 +48,12 @@ export default function Calendar() {
 							<div
 								className={cn(
 									"h-5 w-5  rounded-sm cursor-pointer",
-									// getColor(log?.hour || 0)
+									getColor(log?.hour || 0)
 								)}
 							></div>
 						</HoverCardTrigger>
 						<HoverCardContent>
-							{/* {log?.hour || 0} hours on {value} */}
+							{log?.hour || 0} hours on {value}
 						</HoverCardContent>
 					</HoverCard>
 				);

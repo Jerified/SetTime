@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="px-5 space-y-10">
+    <main className="px-5 space-y-10 ">
       <Navbar />
       <NewLog />
       <Calendar />
