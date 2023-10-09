@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-// import { Button } from "./ui/button";
+import { Button } from "./ui/button";
 import { IoTimer } from "react-icons/io5";
 // import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { usePathname, useRouter } from "next/navigation";
@@ -13,7 +13,7 @@ export default function Navbar() {
 		// await supabase.auth.signOut();
 		router.refresh();
 	};
-	const isAuthPage = path === "/auth";
+	// const isAuthPage = path === "/auth";
 
 	return (
 		<div className="flex items-center justify-between">

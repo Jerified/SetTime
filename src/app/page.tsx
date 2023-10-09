@@ -1,6 +1,6 @@
 import Logs from '@/components/Logs'
 import Navbar from '@/components/Navbar'
-import { NewLog } from '@/components/NewLogs'
+import { NewLog } from '@/components/NewLog'
 import { Calendar } from '@/components/ui/calendar'
 import Image from 'next/image'
 
