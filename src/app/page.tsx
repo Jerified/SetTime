@@ -1,16 +1,14 @@
-import Logs from '@/components/Logs'
-import Navbar from '@/components/Navbar'
-import { NewLog } from '@/components/NewLog'
-import { Calendar } from '@/components/ui/calendar'
-import Image from 'next/image'
+import Category from "@/components/Category";
+import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+
 
 export default function Home() {
   return (
-    <main className="px-5 space-y-10 ">
-      <Navbar />
-      <NewLog />
-      <Calendar />
-      <Logs />
+    <main className=" ">
+      <Hero />
+      <Category />
+      <Services />
     </main>
   )
 }

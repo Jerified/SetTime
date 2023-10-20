@@ -1,9 +1,9 @@
+import Navbar from '@/components/Navbar'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Toaster } from "@/components/ui/toaster";
+import { Josefin_Sans } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Josefin_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Time Saver',
@@ -17,10 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-    <body className= {`bg-[#888888] ${inter.className}`}>
-      <main className="max-w-6xl mx-auto min-h-screen">
+    <body className= {`bg-antiquewhite ${inter.className}`}>
+      <main className="">
+        <Navbar />
         {children}
-        <Toaster />
       </main>
     </body>
   </html>
