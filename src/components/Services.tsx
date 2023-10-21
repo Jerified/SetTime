@@ -1,10 +1,27 @@
+'use client'
+
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
+import {Navigation, Pagination} from 'swiper/modules'
+import { Swiper, SwiperSlide, useSwiperSlide } from "swiper/react"
+
+
+import "swiper/css"
+// import "swiper/css/navigation"
+import SlideNavButton from './SlideNavButton'
+import Active from './Active'
 // import { neue } from 'next/font/google'
 
 // const inter = Josefin_Sans({ subsets: ['latin'] })
 
+// SwiperCore.use([Navigation])
+
 const Services = () => {
+
+   const swiperSlide = useSwiperSlide()
+
+    const [activeIndex, setActiveIndex] = useState(0)
+
 
     const services = [
         {
@@ -27,23 +44,39 @@ const Services = () => {
         }
     ]
     return (
-        <section className='container relative top-[40rem]'>
+        <section className='container lg:!pr-0 relative top-[40rem]'>
             <div className="py-20">
-                <p className="text-[2.88rem] tracking-[0.06em] leading-[2.38rem] font-medium font-neue-montreal text-darkslategray">Our Service</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {services.map(service => (
-                        <div className={`ring-1 ring-gray-400 px-6 py-10 rounded-[66px]  ${service.id % 2 === 1 ? 'skew-y-[8deg]' : '-skew-y-[8deg]'}`} key={service.id}>
-                            <div className={`rounded-full bg-gold lg:w-[7rem] lg:h-[7rem] w-[5rem] h-[5rem] flex justify-center items-center  -skew-y-[8deg] ${service.id % 2 === 0 && 'skew-y-[7deg]'}`}>
-                                <Image className="lg:h-[5rem] lg:w-[5rem] w-[3rem] h-[3rem]  " alt="" src={service.img} width={100} height={100} />
-                            </div>
-                            <h3 className={`text-[1.63rem] leading-[1.88rem] text-darkslategray -skew-y-[8deg] font-medium pt-6 ${service.id % 2 === 0 && 'skew-y-[7deg]'} `}>{service.title}</h3>
-                            <p className={`text-[1.25rem] text-darkslategray  ${service.id % 2 === 0 && 'skew-y-[7deg]'}  -skew-y-[8deg] leading-[1.94rem]`}>{service.content}</p>
-                            <button className={` rounded-[190px] box-border w-fit flex items-end py-[0.75rem] px-[2rem] text-left text-[1.25rem] text-darkslategray border-[2px] border-solid border-darkslategray -skew-y-[8deg] ${service.id % 2 === 0 && 'skew-y-[7deg]'}`}>
-                                <div className=" tracking-[0.09em] leading-[2.38rem] font-medium ">Explore</div>
-                            </button>
-                        </div>
-                    ))}
-                </div>
+                <p className="text-[2.88rem] tracking-[0.06em] leading-[2.38rem] font-medium  text-darkslategray pb-12">Our Service</p>
+                <Swiper navigation slidesPerView={1} spaceBetween={15} breakpoints={{
+                    640: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 2.5 }
+                }} modules={[Navigation, Pagination]} 
+                className='!mx-0'
+                // renderSlide = {(slide, index) => (
+
+                // )}
+                //  onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                >
+                    {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"> */}
+                        {services.map((service, index) => (
+                            <SwiperSlide key={service.id}>
+                                
+                                <Active service={service} />
+                                {/* {({isActive}: any) => (
+                                    <p className="">{isActive ? 'hello' : ''}</p>
+                                )} */}
+                                {/* <p className="">{swiperSlide.isActive && 'hello'}</p> */}
+                            </SwiperSlide>
+                            
+                        ))}
+                        <SlideNavButton active={activeIndex} />
+                        
+                    {/* </div> */}
+                    
+                </Swiper>
+
+
 
             </div>
         </section>
