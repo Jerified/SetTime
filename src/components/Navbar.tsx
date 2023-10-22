@@ -20,7 +20,7 @@ const Navbar = () => {
         },
     ]
     return (
-        <div className=' bg-transparent flex justify-between items-center py-5 container'>
+        <div className=' bg-transparent flex justify-between items-center py-5 container lg:px-[8rem]'>
             <p className=" text-[1.31rem] tracking-[0.01em] leading-[2.38rem] font-semibold text-darkslategray ">Pet-First</p>
             <nav className="text-[0.88rem] lg:flex gap-8 hidden">
                 {navs.map(nav => (

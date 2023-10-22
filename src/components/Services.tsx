@@ -44,7 +44,7 @@ const Services = () => {
         }
     ]
     return (
-        <section className='container lg:!pr-0 relative top-[40rem]'>
+        <section className='container lg:px-[8rem] lg:!pr-0 '>
             <div className="py-20">
                 <p className="text-[2.88rem] tracking-[0.06em] leading-[2.38rem] font-medium  text-darkslategray pb-12">Our Service</p>
                 <Swiper navigation slidesPerView={1} spaceBetween={15} breakpoints={{
@@ -52,6 +52,8 @@ const Services = () => {
                     768: { slidesPerView: 2 },
                     1024: { slidesPerView: 2.5 }
                 }} modules={[Navigation, Pagination]} 
+                // rewind={true}
+                loop={true}
                 className='!mx-0'
                 // renderSlide = {(slide, index) => (
 
