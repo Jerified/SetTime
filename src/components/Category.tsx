@@ -48,11 +48,11 @@ const Category = () => {
         },
     ]
     return (
-        <section className=" bg-orangered w-full h-[20rem] lg:px-[8rem] lg:pr-0 bottom-0 mt-20">
-            <div className="grid flex-row place-items-center h-full">
+        <section className=" bg-orangered w-full h-[20rem]  bottom-0 mt-20">
+            <div className="grid flex-row place-items-center lg:px-[8rem] lg:pr-0 h-full relative">
                 <Image className="absolute top-[1.5rem] pt- left-[0rem] w-[5rem] md:w-[8rem] h-[5rem] md:h-[9rem] overflow-hidden" alt="" src='/images/Frame.png' width={60} height={60} />
                 <div className="lg:flex-row w-full flex flex-col-reverse items-center  lg:pl-[-2rem">
-                    <div className="w-full justify-center  flex lg:pl-[7rem] ">
+                    <div className="w-full justify-cente  flex ">
                         <Image className="lg:max-w-full" alt="" src='/images/45+.png' width={200} height={200} />
                     </div>
                     <div className="flex flex-col gap-2 ">

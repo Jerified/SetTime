@@ -24,6 +24,9 @@ module.exports = {
         "linen": "#fcefe2",
         "darkcyan": "#189cab",
         },
+        screens: {
+          'xl': '1125px'
+        }
     },
   },
   plugins: [require("tailwindcss-animate")],
