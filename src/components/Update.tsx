@@ -8,7 +8,7 @@ const Update = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 containe pt-12 lg:pt-[8rem]  h-[23.5rem]">
         <div className=" bg-gold lg:pl-[8rem] container relative hidden lg:flex justify-center items-center">
           <Image src='/images/doggybg.png' className=' w-full lg:w-[34.38rem]' alt='' width={200} height={200} />
-          <Image src='/images/doggy.png' className='absolute top-[-3.5rem] mx-auto w-[25.44rem] h-[23.81rem] object-cover' alt='' width={300} height={300} />
+          <Image src='/images/doggy.png' className='absolute top-[-3.5rem] mx-auto w-[25.44rem] h-[22rem] object-cover' alt='' width={300} height={300} />
         </div>
         <div className="bg-orangered lg:pl-16 container py-12">
           <div className=" relative lg:pr-[8rem]">

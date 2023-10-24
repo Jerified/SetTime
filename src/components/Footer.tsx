@@ -34,11 +34,11 @@ const Footer = () => {
     ]
     return (
         <footer className="bg-darkslategray">
-            <div className="container lg:px-[8rem] lg:flex flex flex-col gap-8 justify-between lg:h-[16rem] items-center pt-12">
+            <div className="container lg:px-[8rem] lg:flex-row flex flex-col gap-8 justify-between lg:h-[16rem] items-center pt-12">
                 <div className="">
                     <Image src='/images/Pet-First.png' className='w-[8rem] lg:w-[14.44rem]' width={100} height={100} alt='' />
                 </div>
-                <nav className="text-[0.88rem] lg:flex-row flex flex-col  gap-[0.75rem]">
+                <nav className="text-[0.88rem] lg:flex-row flex flex-col gap-[0.5rem] lg:gap-[0.75rem]">
                 {navs.map(nav => (
                     <div className="" key={nav.id}>
                         <p className="tracking-[0.01em] leading-[2.63rem] text-antiquewhite font-semibold">{nav.title}</p>
